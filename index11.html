@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sketch">
+<head>
+	<meta charset="UTF-8">
+	<title>画图</title>
+	<script src="js/angular.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-controller="myctrl">
+	<div class="ctrl">
+		<div class="creat" ng-click="create()">新建</div>
+		<!-- save 函数保存图片是需要把save包在a标签中-->
+		<div class="save"><a href=""ng-click="save($event)">保存</a></div>
+		<ul class="gongju">
+			<li class="tool" ng-repeat="(key,value) in tools" ng-click="setTool(value)" ng-class="{active:value==tool}">{{key}}</li>
+		</ul>
+		<div class="tianchong">
+			<div>样式</div>
+			<span ng-click="setStyle('stroke')" ng-class="{checked:csState.style=='stroke'}">空线条</span>
+			<span ng-click="setStyle('fill')" ng-class="{checked:csState.style=='fill'}"}>实心</span>
+		</div>
+		<div class="lineWidth">
+		    <span>线宽{{csState.lineWidth}}px</span>
+			<input type="range"ng-model="csState.lineWidth" min='1' max='30' step='1'>
+		</div>
+		<div class="color">
+			<div class="now_color">
+				<div class="yanse" ng-class="colormoren"></div>
+				当前颜色
+			</div>
+			<ul class="color_list">
+				<li class="color_select" ng-repeat="(key,value) in colors" ng-class="key" ng-click="setColor(key)"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="canvas">
+		<canvas width='{{canvasWH.width}}' height='{{canvasWH.height}}' id="canvas"></canvas>
+	</div>
+</body>
+</html>

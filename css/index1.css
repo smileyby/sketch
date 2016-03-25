@@ -1,0 +1,92 @@
+body,ul,li,span{padding:0;margin:0;
+	            list-style:none; 
+	            font-family:Arial,"微软雅黑";}
+nav .brand-logo{font-size:0.3rem;}	            
+.brand-logo img{width:32px;
+                height:32px;
+                margin-top:16px;
+                margin-left:20px;}	
+.canvasBox{position:absolute;
+           left:0;
+           right:0;
+           top:132px;
+           bottom:0;}
+.canvasBox .col{width:100%;
+                height:100%;}
+#canvas{position:absolute;
+	    left:50%;
+	    top:0px;
+	    margin-left:-500px;
+	    background:#fff;}
+.tools{width:100%;
+       height:48px;}
+.tools li{text-align:center;
+          line-height:48px;
+          cursor:pointer;
+          border:2px solid #EF9A9A;
+          position:relative;}
+.tools li:hover{border:2px solid #EE6E73;color:#fff !important;}
+.xiala{position:absolute;
+       left:0;
+       top:48px;
+       width:100%;
+       display:none;
+       overflow:hidden;
+       z-index:100;
+       border-radius:6px;
+       background:red;} 
+.xiala li{width:100%;
+          height:30px;
+          color:#fff;
+          cursor:pointer;
+          border-radius:6px;
+          line-height:30px;
+          margin-bottom:4px;} 
+.xiala li.red.lighten-1:hover{border:2px solid #EE6E73;} 
+.color li{width:30px;
+          height:30px;
+          margin:10px;
+          display:inline-block;}  
+.color li:nth-child(1){width:100%;
+    		               height:30px;
+    		               display:block;
+    		               margin:0 auto;
+    		               text-align:center;}
+.xiankuan li:nth-child(1){background:#ccc !important;color:#fff !important;}
+.linefit{transform:rotateZ(90deg);
+         position:absolute;
+         left:auto;
+         top:40px;}	
+.shuoming-content{width:760px;
+                  height:460px;
+                  padding:20px;
+                  background:#EF9A9A;
+                  position:absolute;
+                  left:50%;
+                  top:60%;
+                  display:none;
+                  border-radius:6px;
+                  z-index:200;
+                  margin-left:-400px;
+                  margin-top:-250px;}
+#canvas{cursor:default;}
+.color1{background:#000;}
+.color2{background:#7f7f7f;}
+.color3{background:#880015;}
+.color4{background:#ed1c24;}
+.color5{background:#ff7f27;}
+.color6{background:#fff200;}
+.color7{background:#22b14c;}
+.color8{background:#00a2e8;}
+.color9{background:#3f48cc;}
+.color10{background:#a349a4;}
+.color11{background:#fff;color:#000 !important;}
+.color12{background:#c3c3c3;}
+.color13{background:#b97a57;}
+.color14{background:#ffaec9;}
+.color15{background:#ffc90e;}
+.color16{background:#efe4b0;}
+.color17{background:#b5e61d;}
+.color18{background:#99d9ea;}
+.color19{background:#7092be;}
+.color20{background:#c8bfe7;}    

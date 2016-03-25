@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sketch">
+<head>
+	<meta charset="UTF-8">
+	<title>画图</title>
+	<script src="js/angular.js"></script>
+	<script src="js/jquery.1.12.1.js"></script>
+	<script src="js/index.js"></script> 
+	<script src="js/index1.js"></script>
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/index1.css">
+</head>
+<body ng-controller="myctrl" class="brown">
+	<nav>
+	    <div class="nav-wrapper">
+		    <a href="#" class="brand-logo">
+		    	<img src="./image/iconfont-huaban.png" alt="">画板
+		    </a>
+		    <ul id="nav-mobile" class="right hide-on-med-and-down">
+			    <li class="shuoming"><a href="#">使用说明</a></li>
+			    <li><a href="#">关于我们</a></li>
+		    </ul>
+	    </div>
+	</nav>
+	<!-- 说明书 开始 -->
+	<div class="shuoming-content">
+		<h3>画板使用说明书</h3>
+		<p>
+			1、新建        您可以通过新建来创建新的画布，并删除已经存在的图画；（建议您在新建之前先保存）</br>
+			2、保存        您可以通过保存来存储您的作品，存储的图片格式为PNG；</br>
+			3、填充样式    这里为您提供了两种样式，空心线：为空线条；实心：填充您画出来的图形；</br>
+			4、画笔箱      画笔箱中为您提供了，画园、画方、画线等功能；</br>
+			5、配色版      再配色版中可以选择你喜欢的颜色来填充您的图形；</br>
+			6、线宽        您可以在线宽功能中选择适合您图像的宽度
+		</p>
+	</div>
+	<!-- 说明书 结束 -->
+	<div class="row red lighten-3">
+    <div class="col s12">
+      <ul class="tools red lighten-3">
+        <li class="col s2" ng-click="create()">新建</li>
+        <li class="col s2"><a href=""ng-click="save($event)">保存</a></li>
+        <li class="col s2 xialist">填充样式
+			<ul class="xiala red lighten-3 z-depth-2">
+				<li class="red lighten-1" ng-click="setStyle('stroke')" ng-class="{checked:csState.style=='stroke'}">空线条</li>
+				<li class="red lighten-1" ng-click="setStyle('fill')" ng-class="{checked:csState.style=='fill'}"}>实心</li>
+			</ul>
+        </li>
+        <li class="col s2 xialist">画笔箱
+			<ul class="xiala red lighten-3 z-depth-2">
+				<li class="red lighten-1" ng-repeat="(key,value) in tools" ng-click="setTool(value)" ng-class="{active:value==tool}">{{key}}</li>
+			</ul>
+        </li>
+        <li class="col s2 xialist">配色板
+			<ul class="xiala red lighten-3 z-depth-2 color">
+				<li ng-class="colormoren">当前颜色</li>
+				<li ng-repeat="(key,value) in colors" ng-class="key" ng-click="setColor(key)"></li>
+			</ul>
+        </li>
+        <li class="col s2 xialist">线宽
+			<ul class="xiala red lighten-3 z-depth-2 xiankuan">
+				<li>
+					<span>线宽{{csState.lineWidth}}px</span>
+				</li>
+				<li ng-repeat="(key,value) in lineWidth" ng-click="setline(key)">{{key}}</li>
+			</ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div class="row canvasBox">
+		<div class="col s12">
+			<canvas id="canvas" width="1000" height="500" class="z-depth-2"></canvas>
+		</div>
+	</div> 
+</body>
+</html>
